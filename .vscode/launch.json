@@ -1,0 +1,33 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "chrome",
+			"request": "launch",
+			"name": "malinovka: chrome",
+			"url": "http://localhost:9124",
+			"webRoot": "${workspaceFolder}/src",
+			"breakOnLoad": true,
+			"port": 9123,
+			"runtimeArgs": [
+				"--disable-web-security",
+				"--remote-debugging-port=9123",
+				"--disable-extensions"
+			],
+			"sourceMapPathOverrides": {
+				"webpack:///src/*": "${webRoot}/*"
+			}
+		},
+		{
+			"type": "chrome",
+			"request": "attach",
+			"name": "malinovka: cef",
+			"port": 4911,
+			"url": "*",
+			"webRoot": "${workspaceFolder}/src",
+			"sourceMapPathOverrides": {
+				"webpack:///src/*": "${webRoot}/*"
+			}
+		}
+	]
+}

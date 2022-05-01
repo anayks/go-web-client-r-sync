@@ -1,0 +1,25 @@
+{
+    "name": "testch",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve --port=9124",
+        "build": "vue-cli-service build"
+    },
+    "dependencies": {
+        "@sentry/vue": "^6.17.9",
+        "sudo": "^1.0.3",
+        "vue": "^2.6.11"
+    },
+    "devDependencies": {
+        "@sentry/webpack-plugin": "^1.18.7",
+        "@vue/cli-service": "~4.3.0",
+        "cache-loader": "^4.1.0",
+        "vue-template-compiler": "^2.6.11"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ]
+}
