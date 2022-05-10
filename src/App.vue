@@ -24,7 +24,6 @@
 
 const MaxDown      = 2000 * 2
 const MaxRight     = 3000 * 2
-const MaxDepth	   = 3000 * 2
 
 export default
 {
@@ -35,18 +34,11 @@ export default
 			player: {
 				x: 2,
 				y: 2,
-				z: 0,
 			},
 			rotate: true,
 		};
 	},
 	methods: {
-		getPosByRotate(entity) {
-			if(this.rotate) {
-				return entity.x
-			}
-			return entity.z;
-		},
 		getBackground(entity) {
 			const id = entity.id;
 			if(id % 20 == 0) {
@@ -72,9 +64,6 @@ export default
 			} else if(key == "r") {
 				this.changeRotate();
 			}
-		},
-		changeRotate() {
-			this.rotate = !this.rotate;
 		},
 		moveTop(y = 1) {
 			if(this.player.y-y <= 0) {
@@ -105,20 +94,6 @@ export default
 				return
 			}
 			this.player.x = this.player.x - x
-		},
-		moveDepth(z = 1) {
-			if(this.player.z-z <= 0) {
-				this.player.z = 0;
-				return
-			}
-			this.player.z = this.player.z - z
-		},
-		moveUpward(z = 1) {
-			if(this.player.z+z >= MaxDepth) {
-				this.player.z = MaxDepth
-				return
-			}
-			this.player.z = this.player.z + z
 		},
 
 		waitResult() {
